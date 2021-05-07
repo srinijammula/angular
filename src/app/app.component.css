@@ -1,0 +1,10 @@
+.x{
+    overflow-x:hidden;
+}
+.b{
+    background-color:rgb(93, 188, 248,0.5);
+}
+h1{
+    font-family: 'Prata', serif;
+    font-size:4.5rem;
+}
