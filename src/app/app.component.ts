@@ -32,4 +32,9 @@ export class AppComponent {
       title:"Coffee"
     }
   ]
+
+  recieve=[];
+  getCount(title){
+    this.recieve.push(title)
+  }
 }
