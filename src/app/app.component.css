@@ -1,14 +1,25 @@
 .x{
     overflow-x:hidden;
 }
-.b{
-    background-color:rgb(93, 188, 248,0.5);
+.fa-utensils{
+    font-size:19px;
+    background-color:rgb(250, 222, 189);
+    color:plum;
 }
-h1{
-    font-family: 'Prata', serif;
-    font-size:4.5rem;
+.navbar-brand{
+    color:#cda45e;
+    font-family:'Pacifico',sans-serif;
+    letter-spacing: 0.05ch;
 }
-li:hover{
-    background-color:lightgrey;
-    color:darkorchid;
+li a{
+    text-align:center;
+    font-family:'Roboto',sans-serif;
+}
+li a:hover{
+    color:white !important;
+    background-color: plum;
+    transition:0.7s;
+}
+.active{
+    color:#cda45e;
 }

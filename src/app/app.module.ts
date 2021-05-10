@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ProductsComponent } from './products/products.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     HomeComponent,
     SignupComponent,
     LoginComponent,
-    ContactusComponent
+    ContactusComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
