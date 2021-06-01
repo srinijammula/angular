@@ -1,7 +1,7 @@
 <div class="x">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><i class="fas fa-utensils mx-auto p-2 rounded-circle"></i>&nbsp;Edibles</a>
+          <a class="navbar-brand" href="#"><i class="fas fa-utensils mx-auto p-2 rounded-circle"></i>&nbsp;Delish</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -13,15 +13,57 @@
               <li class="nav-item">
                 <a class="nav-link" routerLink="signup" routerLinkActive="active">Sign up</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" *ngIf="!ds.userLoginStatus()">
                 <a class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+              </li>
+              <li class="nav-item" *ngIf="ds.userLoginStatus()">
+                <a class="nav-link" routerLink="login" routerLinkActive="active" (click)="ds.logout()">Logout</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="contactus" routerLinkActive="active">Contact us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="products" routerLinkActive="active">Products</a>
+                <a class="nav-link" routerLinkActive="active" data-bs-toggle="offcanvas" href="#menubody">Menu</a>
               </li>
+              <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="menubody" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Logo</h5>
+                  <button type="button" class="btn-close text-white h4" data-bs-dismiss="offcanvas" aria-label="Close">X</button>
+                </div>
+                <div class="offcanvas-body text-light">
+                  <ul class="list-unstyled">
+                    <li><a routerLink="starter">Starters</a></li>
+                      <ul class="list-unstyled p-1 child">
+                        <li>Soups</li>
+                        <li>Pizza</li>
+                        <li>Salads</li>
+                        <li>Grilled items</li>
+                      </ul>
+                    <li><a routerLink="seafood">Sea Food</a></li>
+                    <ul class="list-unstyled p-1 child">
+                      <li>Fish</li>
+                      <li>Prawns</li>
+                      <li>Crab</li>
+                    </ul>
+                    <li><a routerLink="maincourse">Main Course</a></li>
+                    <ul class="list-unstyled p-1 child">
+                      <li>Veg Curries</li>
+                      <li>Non-veg Curries</li>
+                      <li>Roti</li>
+                      <li>Biryani</li>
+                    </ul>
+                    <li><a routerLink="dessert">Dessert</a></li>
+                    <ul class="list-unstyled p-1 child">
+                      <li>Cake</li>
+                      <li>Ice-cream</li>
+                      <li>Drinks</li>
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+              <!-- <li class="nav-item">
+                <a class="nav-link" routerLink="test" routerLinkActive="active">Tricky</a>
+              </li> -->
             </ul>
           </div>
         </div>

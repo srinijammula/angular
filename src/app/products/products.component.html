@@ -1,20 +1,15 @@
-
-<div class="b text-white text-center mb-4 p-3">
-    <h1>Product Cards</h1>
-    <button class=" h3 btn btn-light text-info" data-bs-toggle="collapse" data-bs-target="#a">
-        <i class="fas fa-shopping-cart"></i>
-        My items   &nbsp;
-        <span class="float-end btn btn-sm btn-info text-white rounded-circle">{{count}}</span>
-    </button>
-    <div class="collapse bg-light text-secondary w-25 mx-auto" id="a">
-        <ul class="list-unstyled">
-        <li class="m-1 p-1" *ngFor="let i of recieve">{{i}}</li>
-        </ul>
-        <button *ngIf="recieve.length!=0" class="btn btn-sm btn-danger text-white m-1" (click)="recieve.length=0;count=0">Clear</button>
+  
+   <ul class="nav nav-pills mt-4 justify-content-evenly">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="icecream" routerLinkActive="active">Ice cream</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="cupcake" routerLinkActive="active">Cupcake</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="berries" routerLinkActive="active">Berries</a>
+              </li>
+    </ul>
+    <div class="container">
+      <router-outlet></router-outlet>
     </div>
-</div>
-<div class="container">
-<div class="row row-cols-1 row-cols-sm-3">
-<app-product *ngFor="let content of post" [data]="content" (eve)="getCount($event)"></app-product>
-</div>
-</div>

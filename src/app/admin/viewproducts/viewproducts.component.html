@@ -1,0 +1,54 @@
+
+<form #ref="ngForm" (ngSubmit)="saveCupcake(ref.value)">
+    <input type="text" name="title" placeholder="Search by name" class="form-control mt-2" [(ngModel)]="searchTerm">
+    <h3 class="text-center mb-1">{{t | date:'short'}}</h3>
+    <table class="table table-primary table-striped container text-center">
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cupcake of cupcakes;let ind=index">
+
+                
+                <td>
+                    <span *ngIf="!editCupcakeStatus || editCupcakeIndex!==ind">
+                        {{cupcake.title | uppercase}}
+                    </span>
+
+                    <input type="text" name="title"  [(ngModel)]="editCupcakeObj.title"
+                        *ngIf="editCupcakeStatus && editCupcakeIndex==ind">
+
+                </td>
+               
+                <td>
+                    <span *ngIf="!editCupcakeStatus || editCupcakeIndex!==ind">
+                        {{cupcake.price | currency: 'INR'}}
+                    </span>
+
+                    <input type="text" name="price"  [(ngModel)]="editCupcakeObj.price"
+                        *ngIf="editCupcakeStatus && editCupcakeIndex==ind">
+
+                </td>
+                <td>
+                    <img src={{cupcake.imgPath}} alt="" width="100px">
+                </td>
+                <!-- edit  and delete -->
+                <td>
+                    <span *ngIf="!editCupcakeStatus || editCupcakeIndex!==ind">
+                        <button class="btn btn-danger btn-sm p-1 m-1" (click)="editCupcake(cupcake,ind)" type="button"><i
+                                class="fas fa-edit text-warning"></i></button>
+                        <button class="btn btn-warning btn-sm p-1 m-1"><i
+                                class="fas fa-trash-alt text-danger" (click)="deleteCupcake(cupcake)" type="button"></i></button>
+                    </span>
+
+                    <span *ngIf="editCupcakeStatus && editCupcakeIndex==ind">
+                        <button class="btn btn-sm btn-success" type="submit"><i
+                                class="fas fa-save text-white"></i></button>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</form>

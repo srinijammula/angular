@@ -8,7 +8,7 @@ import { blog } from '../models/blog.model';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() data:blog;
+  @Input() data:any;
 
   @Output() eve=new EventEmitter();
 

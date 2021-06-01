@@ -1,11 +1,10 @@
-.b{
-    background-color:rgb(93, 188, 248,0.5);
+li .active{
+    color:cadetblue;
+    background-color: black;
 }
-h1{
-    font-family: 'Prata', serif;
-    font-size:4.5rem;
-}
-li:hover{
-    background-color:lightgrey;
-    color:darkorchid;
+li a{
+    color:black;
+    background-color: lightblue;
+    font-family:'Prata';
+    font-weight: bold;
 }
