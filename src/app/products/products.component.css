@@ -1,0 +1,10 @@
+li .active{
+    color:cadetblue;
+    background-color: black;
+}
+li a{
+    color:black;
+    background-color: lightblue;
+    font-family:'Prata';
+    font-weight: bold;
+}

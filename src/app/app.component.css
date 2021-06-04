@@ -1,10 +1,60 @@
 .x{
     overflow-x:hidden;
 }
-.b{
-    background-color:rgb(93, 188, 248,0.5);
+.fa-utensils{
+    font-size:19px;
+    background-color:lightgray;
+    color:grey;
 }
-h1{
-    font-family: 'Prata', serif;
-    font-size:4.5rem;
+.navbar-brand{
+    color:#ffd700;
+    font-size:22px;
+    font-family:'Sansita',sans-serif;
+    letter-spacing: 0.15ch;
+}
+li a{
+    text-align:center;
+    font-family:'Roboto',sans-serif;
+    padding:4px;
+    position:relative;
+}
+ .nav-item a::before {
+    content: "";
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    background-color: #e74c3c;
+  }
+   .nav-item a:hover::before {
+    right: 0;
+    left: 0;
+  }
+.active{
+    color:#cda45e;
+}
+.offcanvas{
+    background-color: black;
+    opacity:0.97;
+}
+.offcanvas-body a{
+    color:grey;
+    margin-left:10px;
+    font-size: 22px;
+    font-family:'Prata';
+    text-decoration: none;
+    letter-spacing: 0.22ch;
+}
+.offcanvas-body a:hover{
+    text-decoration: underline;
+    color:white;
+    background-color: black;
+}
+.offcanvas-body .child{
+    color:#ffd700;
+    margin-left:15px;
+    margin-bottom:5px;
+    letter-spacing: 0.1ch;
 }

@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="row pt-5">
+      <div class="col-0 col-sm-2 col-md-3"></div>
+      <div class=" col-12 col-sm-8 col-md-6 mt-3 mb-3">
+        <div class=" bg-dark card card-body  text-white rounded" id="p1">
+          <h1 class="display-6 text-center">Sign in</h1>
+          <form #ref="ngForm" (ngSubmit)="ref.form.valid && onLogin(ref)">
+              <div class="input-group pt-2">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text bg-warning"><i class="fas fa-user py-1"></i></span>
+                  </div>
+                  <input type="text" class="form-control"  placeholder="Username" name="username" ngModel required minlength="4" #refUsername="ngModel" autocomplete="off">
+              </div>
+              <div>  
+                  <p class="text-warning form-text" *ngIf="(ref.submitted||refUsername.touched)&&refUsername.errors?.required">*
+                      Username is required
+                  </p>
+                  <p class="text-warning form-text" *ngIf="(ref.submitted||refUsername.touched)&&refUsername.errors?.minlength">*
+                      Minlength should be 4
+                  </p>
+              </div>
+              <div class="input-group pt-2">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text bg-warning"><i class="fas fa-key py-1"></i></span>
+                  </div>
+                  <input type="password" name="password" ngModel required #refPassword="ngModel" class="form-control" placeholder="Password">
+              </div>
+              <div>
+                  <p class="text-warning form form-text" *ngIf="(ref.submitted||refPassword.touched)&&refPassword.errors?.required">*
+                      Password is required
+                  </p>
+              </div>
+              <div class="ms-3 py-2">
+              <input type="checkbox"  class="me-2">Remember Me
+              </div>
+              <button class="btn btn-warning d-block mx-auto m-2 px-5 py-2" type="submit">Login</button>
+          </form>
+          <p class="text-center"> Don't have an account?</p>
+          <a href="#" class="text-warning text-center">Sign Up</a>     
+      </div>
+      </div>
+      <div class=" col-0 col-sm-2 col-md-3"></div>
+  </div>
+</div>
+
+
+
+<!-- <div class="row bg-info">
+    <div class="col-sm-2 col-md-3"></div>
+    <div class="col-sm-8 col-md-6 mb-5 mt-5">
+    <div class="card p-4 shadow m-3 text-secondary text-center">
+        <i class="fas fa-utensils mx-auto p-3 rounded-circle"></i>
+        <h1 class="text-center"> Login</h1>
+        <form #ref="ngForm"  (ngSubmit)=" ref.form.valid && onLogin(ref)">
+        <div class="form-floating rounded-0">
+        <input type="text" name="username" class="form-control m-0 rounded-0 b" id="a" placeholder="abcd" ngModel required minlength="5" #ref1="ngModel">
+        <p *ngIf="(ref.submitted || ref1.touched) && ref1.errors?.required">* Please enter username</p>
+        <p *ngIf="(ref.submitted || ref1.touched) && ref1.errors?.minlength">* Minimun of 5 characters are required</p>
+        <label for="a"><i class="fas fa-user"></i> Username</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control m-0 rounded-0 b" id="b" placeholder="abcd" ngModel required pattern="[a-x]+" #ref2="ngModel">
+            <p *ngIf="(ref.submitted || ref2.touched) && ref2.errors?.required">* Password is mandatory</p>
+            <p *ngIf="ref2.errors?.pattern">* Pattern not match</p>
+            <label for="b"><i class="fas fa-lock"></i> Password</label>
+        </div>
+        <button type="submit" class="btn btn-lg bt mt-4 mb-3 d-block mx-auto">Login</button>
+        </form>
+      </div>
+        </div>
+        <div class="col-sm-2 col-md-3"></div>
+        </div>
+         -->
+      
